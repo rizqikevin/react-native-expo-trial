@@ -2,12 +2,12 @@ import React from "react";
 import { Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-const index = () => {
+const create = () => {
   return (
-    <SafeAreaView className="items-center justify-center flex-1">
-      <Text className="text-red-500">index</Text>
+    <SafeAreaView>
+      <Text>create</Text>
     </SafeAreaView>
   );
 };
 
-export default index;
+export default create;

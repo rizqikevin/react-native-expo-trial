@@ -2,12 +2,12 @@ import React from "react";
 import { Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-const index = () => {
+const profile = () => {
   return (
-    <SafeAreaView className="items-center justify-center flex-1">
-      <Text className="text-red-500">index</Text>
+    <SafeAreaView>
+      <Text>profile</Text>
     </SafeAreaView>
   );
 };
 
-export default index;
+export default profile;
