@@ -1,6 +1,7 @@
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import { View } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 import "../global.css";
 
 export default function RootLayout() {
@@ -14,9 +15,11 @@ export default function RootLayout() {
     return <View />;
   }
   return (
-    <Stack>
-      <Stack.Screen name="(auth)" options={{ headerShown: false }} />
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-    </Stack>
+    <SafeAreaProvider>
+      <Stack>
+        <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      </Stack>
+    </SafeAreaProvider>
   );
 }
