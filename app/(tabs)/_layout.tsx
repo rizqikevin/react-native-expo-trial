@@ -1,11 +1,23 @@
 import { colors } from "@/constant/color";
+import { useAuth } from "@clerk/expo";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { Tabs } from "expo-router";
+import { Redirect, Tabs } from "expo-router";
 import { Dimensions, View } from "react-native";
+
 export default function TabsLayout() {
+  const { isLoaded, isSignedIn } = useAuth();
   const { width, height } = Dimensions.get("window");
 
+  if (!isLoaded) {
+    return null;
+  }
+
+  if (!isSignedIn) {
+    return <Redirect href="/(auth)/sign-in" />;
+  }
+
   const buttonSize = width / 0.18;
+
   return (
     <Tabs
       screenOptions={{
